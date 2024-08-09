@@ -1,6 +1,5 @@
 body * {
     border: 1px red solid; /*for testing purposes*/
-    box-sizing: border-box;
 }
 
 .flex-container {
@@ -9,6 +8,8 @@ body * {
     height: 512px;
     margin: auto;
     margin-top: 50px;
+    flex-wrap: wrap;
+    align-content: start;
 }
 
 .reset-button {

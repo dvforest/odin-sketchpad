@@ -1,3 +1,5 @@
+// INITIALIZE
+
 // Default grid
 const container = document.querySelector(".flex-container");
 let subdiv = 8;
@@ -10,13 +12,14 @@ resetButton.addEventListener("click", e => {
     subdivideGrid(subdiv);
 });
 
+
+// FUNCTIONS
+
 function subdivideGrid(s){
-    
     // Clear grid
     while (container.firstChild) {
         container.removeChild(container.lastChild);
     }
-
     // Subdivide grid
     for (let i = 0; i < s**2; i++){
         const div = document.createElement("div");
@@ -25,6 +28,7 @@ function subdivideGrid(s){
         div.style.height = size.toString() + "px";
         div.style.boxSizing = "border-box";
         div.classList.toggle("grid");
+        div.setAttribute("id", "grid-"+ i);
         container.appendChild(div);
     }
 }

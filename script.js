@@ -28,7 +28,7 @@ function subdivideGrid(s){
         div.style.height = size.toString() + "px";
         div.style.boxSizing = "border-box";
         div.classList.toggle("grid");
-        div.setAttribute("id", "grid-"+ i);
+        div.setAttribute("id", i);
         container.appendChild(div);
     }
 }

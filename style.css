@@ -1,5 +1,5 @@
 body * {
-    border: 1px red solid; /*for testing purposes*/
+    border: 1px rgb(220, 220, 220) solid;
 }
 
 .flex-container {

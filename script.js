@@ -2,6 +2,9 @@
 
 // Default grid
 const container = document.querySelector(".flex-container");
+const resolution = 512;
+container.style.width = resolution + "px";
+container.style.height = resolution + "px";
 let subdiv = 8;
 subdivideGrid(subdiv);
 
@@ -26,7 +29,7 @@ function subdivideGrid(s){
         
         // Create one div and set attributes
         const div = document.createElement("div");
-        let size = 512 / s;
+        let size = resolution / s;
         div.style.width = size.toString() + "px";
         div.style.height = size.toString() + "px";
         div.style.boxSizing = "border-box";

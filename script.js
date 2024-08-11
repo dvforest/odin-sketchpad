@@ -42,7 +42,16 @@ function subdivideGrid(s){
         
         // Add mousehover event
         div.addEventListener("mouseover", (e) => {
-            div.style.backgroundColor = "rgba(0,0,0,1)";
+            let currentRgba = e.target.style.backgroundColor;
+            if (currentRgba.match(/rgba/)) {
+                let newRgba = currentRgba.match(/rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d*\.?\d+)\)\s*/); // store RGBA in array
+                let r = newRgba[1];
+                let g = newRgba[2];
+                let b = newRgba[3];
+                let a = parseFloat(newRgba[4]);
+                a = Math.min(a + 0.1, 1); // Add 10% to alpha and limit it to 1
+                e.target.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+            }
         });
         
         container.appendChild(div);

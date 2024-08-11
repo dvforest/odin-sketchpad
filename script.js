@@ -11,7 +11,7 @@ subdivideGrid(subdiv);
 // Reset button
 const resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", e => {
-    subdiv = parseInt(prompt("Enter subdivisions:", subdiv));
+    subdiv = parseInt(prompt("Enter subdivisions (1-100):", subdiv));
     subdivideGrid(subdiv);
 });
 
@@ -19,6 +19,9 @@ resetButton.addEventListener("click", e => {
 // FUNCTIONS
 
 function subdivideGrid(s){
+
+    // Limit subdivisions to range 1-100
+    s = Math.max(1, Math.min(s, 100));
     
     // Clear grid
     while (container.firstChild) {
